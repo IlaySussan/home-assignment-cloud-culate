@@ -1,0 +1,12 @@
+pydantic~=2.11.7
+fastapi~=0.116.0
+bs4~=0.0.2
+beautifulsoup4~=4.13.4
+aiohttp~=3.12.14
+google-generativeai==0.3.0
+uvicorn~=0.35.0
+dotenv~=0.9.9
+python-dotenv~=1.1.1
+openai~=1.95.0
+motor~=3.7.1
+google~=3.0.0
