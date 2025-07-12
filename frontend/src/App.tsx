@@ -137,7 +137,7 @@ function App() {
               </Button>
                       <Container
         sx={{
-          height: '70vh',
+          height: '60vh',
           overflowY: 'auto',
           background: 'rgba(255,255,255,0.05)',
           borderRadius: 2,

@@ -1,0 +1,45 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: aws_scraper_mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: home-assignment-cloud-culate
+    ports: []
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - aws_scraper_network
+
+  backend:
+    build: ./backend-server
+    container_name: aws_scraper_backend 
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    networks:
+      - aws_scraper_network
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: aws_scraper_frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    env_file:
+      - .env
+    networks:
+      - aws_scraper_network
+    restart: unless-stopped
+
+volumes:
+  mongodb_data:
+
+networks:
+  aws_scraper_network:
+    driver: bridge
