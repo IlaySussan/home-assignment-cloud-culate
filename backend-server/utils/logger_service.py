@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 import json
 from datetime import datetime
@@ -17,7 +18,7 @@ class StructuredFormatter(logging.Formatter):
         return json.dumps(log_entry, ensure_ascii=False)
 
 
-def setup_logger(name: str, level: str = "INFO", structured: bool = False) -> logging.Logger:
+def setup_logger(name: str, level: str) -> logging.Logger:
     """
     Setup production-ready logger
 
@@ -27,7 +28,7 @@ def setup_logger(name: str, level: str = "INFO", structured: bool = False) -> lo
         structured: Use JSON structured logging
     """
     logger = logging.getLogger(name)
-    logger.setLevel(getattr(logging, level.upper()))
+    logger.setLevel(level)
 
     # Remove existing handlers
     logger.handlers.clear()
@@ -42,11 +43,9 @@ def setup_logger(name: str, level: str = "INFO", structured: bool = False) -> lo
 
     handler.setFormatter(formatter)
     logger.addHandler(handler)
-
     return logger
 
 
 def get_logger(name: str = None) -> logging.Logger:
     """Get logger with default settings"""
-
-    return setup_logger(name)
+    return setup_logger(name, os.getenv("LOG_LEVEL", "INFO"))

@@ -8,10 +8,10 @@ import uvicorn
 from dotenv import load_dotenv
 from http import HTTPStatus
 
+load_dotenv()
+
 from utils.architecture_parser import AIArchitectureParser
 from utils.types import ScrapeRequest, ArchitectureOut
-
-load_dotenv()
 
 ai_parser: AIArchitectureParser = None
 
