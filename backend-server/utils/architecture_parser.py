@@ -1,5 +1,6 @@
 import asyncio
 import os
+import uuid
 
 import aiohttp
 from bs4 import BeautifulSoup
@@ -7,6 +8,7 @@ from typing import Dict, List, Optional
 import json
 import google.generativeai as genai
 from datetime import datetime
+from uuid import uuid4
 
 from .logger_service import get_logger
 from .mongo_client import MongoHandler
@@ -133,7 +135,8 @@ class AIArchitectureParser:
                 'source_url': raw_content['url'],
                 'scraped_at': raw_content['scraped_at'],
                 'raw_title': raw_content['title'],
-                "parsing_status": ParsingStatusEnum.Success.value
+                "parsing_status": ParsingStatusEnum.Success.value,
+                "id": str(uuid4())
             })
 
             logger.info(f"Successfully parsed architecture from: {raw_content['url']}")
@@ -164,7 +167,8 @@ class AIArchitectureParser:
             'benefits': [],
             'source_url': raw_content['url'],
             'scraped_at': raw_content['scraped_at'],
-            'parsing_status': ParsingStatusEnum.Failed.value
+            'parsing_status': ParsingStatusEnum.Failed.value,
+            "id": str(uuid4())
         }
 
     async def store_architecture(self, architecture_data: Dict) -> str:

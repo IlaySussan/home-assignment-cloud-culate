@@ -43,3 +43,4 @@ class ArchitectureOut(BaseModel):
     scraped_at: datetime
     raw_title: Optional[str] = None
     parsing_status: ParsingStatusEnum
+    id: str

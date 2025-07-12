@@ -26,8 +26,8 @@ async def lifespan(app: FastAPI):
     ai_parser = AIArchitectureParser(
         gemini_api_key=os.getenv("GEMINI_API_KEY", "your-gemini-api-key"),
         mongo_uri=os.getenv("MONGO_URI", "mongodb://localhost:27017/"),
-        db_name=os.getenv("MONGO_DB_NAME", "architectures"),
-        collection_name=os.getenv("MONGO_DB_COLLECTION", "aws_architectures"),
+        db_name=os.getenv("MONGO_DB_NAME", "aws_architectures"),
+        collection_name=os.getenv("MONGO_DB_COLLECTION", "architectures"),
         gemini_model=os.getenv("GEMINI_MODEL", "gemini-2.5-pro")
     )
     yield
