@@ -35,6 +35,7 @@ MONGO_DB_COLLECTION=architectures
 VITE_BACKEND_API_URL=http://localhost:8000
 REQUESTS_TIMEOUT=30
 GEMINI_MODEL=gemini-2.5-pro
+LOG_LEVEL=INFO
 ```
 
 ### 4. Start the stack

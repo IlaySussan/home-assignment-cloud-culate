@@ -26,7 +26,9 @@ This project is a backend service that scrapes AWS architecture documentation pa
 │       ├── ai_parser.py       # AI architecture parser
 │       ├── mongo_client.py    # Async MongoDB handler (motor)
 │       ├── logger_service.py  # Logger setup
+│       ├── mongo_connection.py # Async MongoDB connection (motor)
 │       └── types.py           # Pydantic models & Enums
+│
 ├── .env.example               # Environment variable template
 ├── requirements.txt
 └── README.md
@@ -57,6 +59,9 @@ GEMINI_API_KEY=your_gemini_api_key_here
 MONGO_URI=mongodb://localhost:27017
 MONGO_DB_NAME=architectures
 MONGO_DB_COLLECTION=aws_architectures
+REQUESTS_TIMEOUT=30
+GEMINI_MODEL=gemini-2.5-pro
+LOG_LEVEL=INFO
 ```
 
 ---
@@ -64,7 +69,7 @@ MONGO_DB_COLLECTION=aws_architectures
 ## ▶️ Running the API
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 ---
