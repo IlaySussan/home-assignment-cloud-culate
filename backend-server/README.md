@@ -23,7 +23,7 @@ This project is a backend service that scrapes AWS architecture documentation pa
 ├── app/
 │   ├── main.py                # FastAPI application
 │   └── utils/
-│       ├── ai_parser.py       # AI architecture parser
+│       ├── architecture_parser.py  # AI architecture parser
 │       ├── mongo_client.py    # Async MongoDB handler (motor)
 │       ├── logger_service.py  # Logger setup
 │       ├── mongo_connection.py # Async MongoDB connection (motor)
