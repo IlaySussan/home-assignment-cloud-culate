@@ -81,6 +81,7 @@ docker compose --env-file .env up
   * `MONGO_DB_COLLECTION` – Name of the collection
   * `GEMINI_MODEL` – Gemini model to use (default: gemini-2.5-pro)
   * `REQUESTS_TIMEOUT` – Timeout for HTTP requests (default: 30 seconds)
+  * `LOG_LEVEL` – Log verbosity level (e.g., INFO, DEBUG, WARNING)
 
 ### `frontend`
 
@@ -127,6 +128,7 @@ MONGO_DB_COLLECTION=architectures
 # Logging and runtime configuration
 REQUESTS_TIMEOUT=30
 GEMINI_MODEL=gemini-2.5-pro
+LOG_LEVEL=INFO
 
 # React frontend environment
 VITE_BACKEND_API_URL=http://localhost:8000

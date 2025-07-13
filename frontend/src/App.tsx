@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ItemList from './components/ItemList';
-import { deleteAllScrapedArchitectures, fetchItems, scrapeUrl } from './api';
+import { deleteAllScrapedArchitectures, fetchArchitectures, scrapeUrl } from './api';
 import { Box, TextField, Button, CircularProgress, Typography, Container } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
@@ -11,10 +11,10 @@ function App() {
 
   const handleFetchItems = async () => {
     try {
-      const fetchedItems = await fetchItems();
+      const fetchedItems = await fetchArchitectures();
       setItems(fetchedItems);
     } catch (error) {
-      console.error('Error fetching items:', error);
+      console.error('Error fetching architectures:', error);
     }
   };
 

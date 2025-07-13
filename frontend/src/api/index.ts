@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_BACKEND_API_URL as string;
 
-export const fetchItems = async () => {
+export const fetchArchitectures = async () => {
   try {
     const response = await axios.get(`${API_URL}/architectures`);
     return response.data;
   } catch (error) {
-    console.error('Error fetching items:', error);
+    console.error('Error fetching architectures:', error);
     throw error;
   }
 };
