@@ -103,13 +103,17 @@ frontend
    ```
    npm install
    ```
+3. **Create .env file**
+  ```
+  cp .env.example .env
+  ```
 
-3. **Run the application:**
+4. **Run the application:**
    ```
    npm run dev
    ```
 
-4. **Open your browser:**
+5. **Open your browser:**
    Navigate to `http://localhost:5173` to view the application.
 
 ## Usage
@@ -117,6 +121,3 @@ frontend
 - Enter the URL of the backend server in the input field and click the button to fetch items.
 - The items returned from the backend will be displayed in a list format.
 
-## Contributing
-
-Feel free to submit issues or pull requests for any improvements or bug fixes.
